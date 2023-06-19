@@ -3,9 +3,15 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { NavLink } from 'react-router-dom'; 
+
 
 function BarraNavegacion() {
+
+  let activeStyle ={
+    textDecoration: 'undirline',
+    fontWeight: 'bold'
+  }
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
@@ -17,8 +23,8 @@ function BarraNavegacion() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           > 
-          <Nav.Link href="/">Inicio</Nav.Link>
-            <Nav.Link href="admin">Admin</Nav.Link>
+          <NavLink className='nav-link' to="/" style={({ isActive }) => (isActive ? activeStyle : undefined)} >Inicio</NavLink>
+            <NavLink className='nav-link' to="/admin" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Admin</NavLink>
             </Nav>
 
           <Form className="d-flex">
