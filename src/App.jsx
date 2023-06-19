@@ -1,23 +1,23 @@
-import { Container } from 'react-bootstrap';
-import GrillaRecetas from './components/GrillaRecetas'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css'
+import './App.css' 
+import{BrowserRouter, Route, Routes} from 'react-router-dom'
+import Home from './components/views/Home'
+import Administrador from './components/views/Administrador';
+import Error404 from './components/views/Error404';
 import BarraNavegacion from './components/BarraNavegacion';
-
 
 function App() {
 
   return (
-    <>
-          <Container className='mt-5 main'>
-            <BarraNavegacion></BarraNavegacion>
-    <h1 className='text-center'>Blog de Recetas</h1>
-    <GrillaRecetas></GrillaRecetas>     
-    </Container>
-    <footer className="bg-dark text-center text-light py-4">
-        <p>&copy; Todos los derechos reservados </p>
-      </footer>    
-    </>
+    <BrowserRouter>
+    <BarraNavegacion></BarraNavegacion>
+        <Routes>
+          <Route path ="/" element={<Home/>}></Route>      
+          <Route path ="admin" element={<Administrador/>}></Route>      
+          <Route path ="*" element={<Error404/>}></Route>      
+      </Routes>
+      </BrowserRouter>
+
   )
 }
 
