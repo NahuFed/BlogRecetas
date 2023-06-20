@@ -26,6 +26,8 @@ function BarraNavegacion() {
           > 
           <NavLink className='nav-link' to="/" style={({ isActive }) => (isActive ? activeStyle : undefined)} >Inicio</NavLink>
             <NavLink className='nav-link' to="/admin" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Admin</NavLink>
+            <NavLink className='nav-link' to="/login" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Login</NavLink>
+            <NavLink className='nav-link' to="/registro" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Registrarse</NavLink>
             </Nav>
 
           <Form className="d-flex">
