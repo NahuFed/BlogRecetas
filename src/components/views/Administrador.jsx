@@ -2,6 +2,7 @@ import { Table } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import ItemReceta from "./receta/ItemReceta";
 
 const Administrador = () => {
 
@@ -20,7 +21,7 @@ const Administrador = () => {
             <tr>
               <th>Cod</th>
               <th>Receta</th>
-              <th>Precio</th>
+              <th>Complejidad</th>
               <th>URL de Imagen</th>
               <th>Categoria</th>
               <th>Opciones</th>
@@ -35,6 +36,7 @@ const Administrador = () => {
             <td>.</td>
             <td>.</td>
             </tr>
+            <ItemReceta></ItemReceta>
           </tbody>
         </Table>
       </section>

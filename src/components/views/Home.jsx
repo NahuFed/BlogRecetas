@@ -1,23 +1,18 @@
 import { Container } from 'react-bootstrap';
-import GrillaRecetas from '../GrillaRecetas'
+import GrillaRecetas from './receta/GrillaRecetas'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../App.css'
-import BarraNavegacion from '../BarraNavegacion';
+import BarraNavegacion from '../common/BarraNavegacion';
 
 
 function Home() {
 
   return (
 
-    <>
-          <Container className='mt-5 main'>
-            <BarraNavegacion></BarraNavegacion>
-    <h1 className='text-center'>Blog de Recetas</h1>
-    <GrillaRecetas></GrillaRecetas>     
-    </Container>
-    <footer className="bg-dark text-center text-light py-4">
-        <p>&copy; Todos los derechos reservados </p>
-      </footer>    
+    <>           
+    <h1 className='text-center my-5'>Blog de Recetas</h1>
+    <GrillaRecetas></GrillaRecetas>      
+
     </>
   )
 }

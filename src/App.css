@@ -20,3 +20,7 @@
 .card-body{    
   overflow: hidden;    
 }
+
+.logo{
+  width: 5rem;
+}
