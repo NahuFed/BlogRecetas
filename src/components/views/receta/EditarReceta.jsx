@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 
 
-const EditarRecetea = () => {
+const EditarReceta = () => {
     const {
         register,
         handleSubmit,
@@ -111,4 +111,4 @@ const EditarRecetea = () => {
     };
 
 
-export default EditarRecetea;
+export default EditarReceta;

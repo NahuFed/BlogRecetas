@@ -1,6 +1,8 @@
 import React from 'react';
 import Swal from 'sweetalert2';
-const crearReceta = () => {
+import { useForm } from "react-hook-form";
+
+const CrearReceta = () => {
     const {
         register,
         handleSubmit,
@@ -101,4 +103,4 @@ const crearReceta = () => {
     );
 };
 
-export default crearReceta;
+export default CrearReceta;
