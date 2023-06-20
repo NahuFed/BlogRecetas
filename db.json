@@ -1,0 +1,8 @@
+{
+    "recetas":[
+        { "id":1,"nombreReceta": "Pastafrola","complejidad":"facil", "ingredientes":"harina,azucar, manteca, huevo,membrillo, esencia de vainilla","receta":"1-mezclar 3 huevos y manteca", "categoria":"Tartas dulces", "imagen":"https://www.elmundoeats.com/wp-content/uploads/2019/09/Pasta-Frola-2.jpg"}
+    ],
+    "usuarios"[
+        { "id":1,"body": "some comment", "postId": 1}
+    ]
+}
