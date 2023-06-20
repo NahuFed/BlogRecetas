@@ -7,6 +7,8 @@ import Error404 from './components/views/Error404';
 import BarraNavegacion from './components/common/BarraNavegacion';
 import Footer from './components/common/Footer';
 import { Container } from 'react-bootstrap';
+import Login from './components/views/Login';
+import Registro from './components/views/Registro';
 
 
 
@@ -18,7 +20,9 @@ function App() {
     <Container className='main my-5'>
         <Routes>
           <Route path ="/" element={<Home/>}></Route>      
-          <Route path ="admin" element={<Administrador/>}></Route>      \   
+          <Route path ="admin" element={<Administrador/>}></Route>        
+          <Route path ="login" element={<Login/>}></Route>        
+          <Route path ="registro" element={<Registro/>}></Route>        
           <Route path ="*" element={<Error404/>}></Route>      
       </Routes>
     </Container>
