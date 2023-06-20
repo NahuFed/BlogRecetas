@@ -8,6 +8,7 @@ import BarraNavegacion from './components/common/BarraNavegacion';
 import Footer from './components/common/Footer';
 import { Container } from 'react-bootstrap';
 
+
 function App() {
 
   return (
@@ -16,7 +17,7 @@ function App() {
     <Container className='main my-5'>
         <Routes>
           <Route path ="/" element={<Home/>}></Route>      
-          <Route path ="admin" element={<Administrador/>}></Route>      
+          <Route path ="admin" element={<Administrador/>}></Route>      \   
           <Route path ="*" element={<Error404/>}></Route>      
       </Routes>
     </Container>
