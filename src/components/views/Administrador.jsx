@@ -9,7 +9,7 @@ const Administrador = () => {
     return (
         <section className="container mainSection">
         <div className="d-flex justify-content-between align-items-center mt-5">
-          <h1 className="display-4 ">Productos disponibles</h1>
+          <h1 className="display-4 ">Recetas disponibles</h1>
           <Link className="btn btn-primary" to='/administrador/crear-producto'>
             Agregar
           </Link>
@@ -19,7 +19,7 @@ const Administrador = () => {
           <thead>
             <tr>
               <th>Cod</th>
-              <th>Producto</th>
+              <th>Receta</th>
               <th>Precio</th>
               <th>URL de Imagen</th>
               <th>Categoria</th>
@@ -27,7 +27,14 @@ const Administrador = () => {
             </tr>
           </thead>
           <tbody>
-
+            <tr>
+            <td>.</td>
+            <td>.</td>
+            <td>.</td>
+            <td>.</td>
+            <td>.</td>
+            <td>.</td>
+            </tr>
           </tbody>
         </Table>
       </section>
