@@ -1,7 +1,8 @@
 import React from 'react';
 import Swal from 'sweetalert2';
-import { useForm } from "react-hook-form";
+import { useForm , useFieldArray} from "react-hook-form";
 import { Form, Button } from "react-bootstrap";
+import { useState } from 'react';
 
 const CrearReceta = () => {
     const {
@@ -9,7 +10,29 @@ const CrearReceta = () => {
         handleSubmit,
         formState: { errors },
         reset,
+        control,
       } = useForm();
+
+      const { fields, append, remove } = useFieldArray({
+        control,
+        name: 'inputs',
+      });
+      const [reachedLimit, setReachedLimit] = useState(false);
+      const agregarCampo = () => {
+        if (fields.length < 15) {
+          append({ input: '' }); // Agrega un nuevo campo vacío al arreglo
+          setReachedLimit(false);
+        }else {
+          setReachedLimit(true);
+        }
+      };
+      const borrarUltimoCampo = () => {
+        remove(fields.length - 1); // elimina el ultimo campo del arreglo
+        setReachedLimit(false);
+      };
+
+ 
+
       const onSubmit = ()=>{
    
       }
@@ -98,6 +121,30 @@ const CrearReceta = () => {
             {errors.categoria?.message}
           </Form.Text>
         </Form.Group>
+          <div className='d-flex'>
+          <Form.Label>Ingredientes</Form.Label>
+          <div className='ms-auto'>
+          <Button variant='success'onClick={agregarCampo} >+</Button>
+          <Button variant='danger' onClick={borrarUltimoCampo}>-</Button>
+          </div>
+          </div>
+          {reachedLimit && (
+        <p className="text-danger">
+          Se ha alcanzado el límite de inputs. No se pueden agregar más campos.
+        </p>
+      )}
+          {fields.map((field, index) => (
+        <Form.Group className='mb-3' key={field.id}>
+                    <div style={{ display: 'flex' }}>
+            <div style={{ marginRight: '10px' }}>{index + 1}.</div>
+          <Form.Control
+            {...register(`inputs[${index}].input`)}
+            defaultValue={field.input} // Enlaza el valor del control con React Hook Form
+          />
+          </div>
+        </Form.Group>
+      ))}
+
         <Button variant="primary" type="submit">
           Guardar
         </Button>
