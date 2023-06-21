@@ -9,7 +9,7 @@ import Footer from './components/common/Footer';
 import { Container } from 'react-bootstrap';
 import Login from './components/views/Login';
 import Registro from './components/views/Registro';
-
+import DetalleReceta from './components/views/DetalleReceta'
 
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
           <Route path ="admin" element={<Administrador/>}></Route>        
           <Route path ="login" element={<Login/>}></Route>        
           <Route path ="registro" element={<Registro/>}></Route>        
+          <Route path ="detalle" element={<DetalleReceta/>}></Route>        
           <Route path ="*" element={<Error404/>}></Route>      
       </Routes>
     </Container>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col,Card,Button } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
 const Receta = () => {
     return (
         <Col xs={12} md={6} lg={4} className='mb-4' >
@@ -13,9 +13,9 @@ const Receta = () => {
             <Card.Text className='truncarTexto'> </Card.Text>
           </Card.Body>
           <Card.Footer className="d-flex justify-content-center">
-            <Button variant="primary">
+            <Link className='btn btn-dark' to={"/detalle"} >
               Ver receta completa
-            </Button>
+            </Link>
           </Card.Footer>
         </Card>
       </Col>
