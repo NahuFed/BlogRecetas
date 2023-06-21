@@ -13,25 +13,43 @@ const CrearReceta = () => {
         control,
       } = useForm();
 
-      const { fields, append, remove } = useFieldArray({
+      const { fields: ingredientesFields, append: appendIngredientes, remove: removeIngredientes } = useFieldArray({
         control,
-        name: 'inputs',
+        name: 'ingredientes',
       });
-      const [reachedLimit, setReachedLimit] = useState(false);
-      const agregarCampo = () => {
-        if (fields.length < 15) {
-          append({ input: '' }); // Agrega un nuevo campo vacío al arreglo
-          setReachedLimit(false);
+      const { fields: pasosFields, append: appendPasos, remove: removePasos } = useFieldArray({
+        control,
+        name: 'pasos',
+      });
+      const [ingredientesLimitReached, setIngredientesLimitReached] = useState(false);
+      const [pasosLimitReached, setPasosLimitReached] = useState(false);
+      const agregarIngrediente = () => {
+        if (ingredientesFields.length < 15) {
+          appendIngredientes({ ingrediente: '' }); // Agrega un nuevo campo vacío al arreglo
+          setIngredientesLimitReached(false);
         }else {
-          setReachedLimit(true);
+          setIngredientesLimitReached(true);
         }
       };
-      const borrarUltimoCampo = () => {
-        remove(fields.length - 1); // elimina el ultimo campo del arreglo
-        setReachedLimit(false);
+      const borrarUltimoIngrediente = () => {
+        removeIngredientes(ingredientesFields.length - 1); // elimina el ultimo campo del arreglo
+        setIngredientesLimitReached(false);
       };
 
- 
+      const agregarPaso = () => {
+        if (pasosFields.length < 20) {
+          appendPasos({ paso: '' });
+          setPasosLimitReached(false);
+        } else {
+          setPasosLimitReached(true);
+        }
+      };
+    
+      const borrarUltimoPaso = () => {
+        const lastIndex = pasosFields.length - 1;
+        removePasos(lastIndex);
+        setPasosLimitReached(false);
+      };
 
       const onSubmit = ()=>{
    
@@ -124,22 +142,45 @@ const CrearReceta = () => {
           <div className='d-flex'>
           <Form.Label>Ingredientes</Form.Label>
           <div className='ms-auto'>
-          <Button variant='success'onClick={agregarCampo} >+</Button>
-          <Button variant='danger' onClick={borrarUltimoCampo}>-</Button>
+          <Button variant='success'onClick={agregarIngrediente} >+</Button>
+          <Button variant='danger' onClick={borrarUltimoIngrediente}>-</Button>
           </div>
           </div>
-          {reachedLimit && (
+          {ingredientesLimitReached && (
         <p className="text-danger">
           Se ha alcanzado el límite de inputs. No se pueden agregar más campos.
         </p>
       )}
-          {fields.map((field, index) => (
+          {ingredientesFields.map((field, index) => (
         <Form.Group className='mb-3' key={field.id}>
                     <div style={{ display: 'flex' }}>
             <div style={{ marginRight: '10px' }}>{index + 1}.</div>
           <Form.Control
-            {...register(`inputs[${index}].input`)}
-            defaultValue={field.input} // Enlaza el valor del control con React Hook Form
+            {...register(`inputs[${index}].ingrediente`)}
+            defaultValue={field.ingrediente} // Enlaza el valor del control con React Hook Form
+          />
+          </div>
+        </Form.Group>
+      ))}
+          <div className='d-flex'>
+          <Form.Label>Pasos</Form.Label>
+          <div className='ms-auto'>
+          <Button variant='success'onClick={agregarPaso} >+</Button>
+          <Button variant='danger' onClick={borrarUltimoPaso}>-</Button>
+          </div>
+          </div>
+          {pasosLimitReached && (
+        <p className="text-danger">
+          Se ha alcanzado el límite de inputs. No se pueden agregar más campos.
+        </p>
+      )}
+          {pasosFields.map((field, index) => (
+        <Form.Group className='mb-3' key={field.id}>
+                    <div style={{ display: 'flex' }}>
+            <div style={{ marginRight: '10px' }}>{index + 1}.</div>
+          <Form.Control
+            {...register(`pasos[${index}].paso`)}
+            defaultValue={field.paso} // Enlaza el valor del control con React Hook Form
           />
           </div>
         </Form.Group>
