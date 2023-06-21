@@ -64,7 +64,7 @@ const CrearReceta = () => {
 
 
       const onSubmit = ()=>{
-   
+        console.log("funciono :p")
       }
     return (
         <>
