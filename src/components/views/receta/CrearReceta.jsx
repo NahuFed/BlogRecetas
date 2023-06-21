@@ -2,7 +2,7 @@ import React from 'react';
 import Swal from 'sweetalert2';
 import { useForm , useFieldArray} from "react-hook-form";
 import { Form, Button } from "react-bootstrap";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const CrearReceta = () => {
     const {
@@ -11,6 +11,7 @@ const CrearReceta = () => {
         formState: { errors },
         reset,
         control,
+        setValue,
       } = useForm();
 
       const { fields: ingredientesFields, append: appendIngredientes, remove: removeIngredientes } = useFieldArray({
@@ -32,8 +33,11 @@ const CrearReceta = () => {
         }
       };
       const borrarUltimoIngrediente = () => {
-        removeIngredientes(ingredientesFields.length - 1); // elimina el ultimo campo del arreglo
-        setIngredientesLimitReached(false);
+        if (ingredientesFields.length > 2) {
+          const lastIndex = ingredientesFields.length - 1;
+          removeIngredientes(lastIndex);
+          setIngredientesLimitReached(false);
+        }
       };
 
       const agregarPaso = () => {
@@ -46,10 +50,18 @@ const CrearReceta = () => {
       };
     
       const borrarUltimoPaso = () => {
-        const lastIndex = pasosFields.length - 1;
-        removePasos(lastIndex);
-        setPasosLimitReached(false);
+        if (pasosFields.length > 2) {
+          const lastIndex = pasosFields.length - 1;
+          removePasos(lastIndex);
+          setPasosLimitReached(false);
+        }
       };
+
+      useEffect(() => {
+        appendIngredientes([{ ingrediente: '' }, { ingrediente: '' }]);
+        appendPasos([{ paso: '' }, { paso: '' }]);
+      }, []);
+
 
       const onSubmit = ()=>{
    
@@ -156,10 +168,17 @@ const CrearReceta = () => {
                     <div style={{ display: 'flex' }}>
             <div style={{ marginRight: '10px' }}>{index + 1}.</div>
           <Form.Control
-            {...register(`inputs[${index}].ingrediente`)}
+            {...register(`ingredientes[${index}].ingrediente`,{
+              required: "El ingrediente es obligatorio"
+            })}
             defaultValue={field.ingrediente} // Enlaza el valor del control con React Hook Form
           />
           </div>
+          <Form.Text className="text-danger">
+          {errors.ingredientes && errors.ingredientes[index] && (
+            <p >{errors.ingredientes[index].ingrediente?.message}</p>
+          )}
+          </Form.Text>
         </Form.Group>
       ))}
           <div className='d-flex'>
@@ -179,11 +198,19 @@ const CrearReceta = () => {
                     <div style={{ display: 'flex' }}>
             <div style={{ marginRight: '10px' }}>{index + 1}.</div>
           <Form.Control
-            {...register(`pasos[${index}].paso`)}
+            {...register(`pasos[${index}].paso`,{
+              required: "El paso es obligatorio"
+            })}
             defaultValue={field.paso} // Enlaza el valor del control con React Hook Form
           />
           </div>
+          <Form.Text className="text-danger">
+          {errors.pasos && errors.pasos[index] && (
+            <p >{errors.pasos[index].paso?.message}</p>
+          )}
+          </Form.Text>
         </Form.Group>
+        
       ))}
 
         <Button variant="primary" type="submit">
