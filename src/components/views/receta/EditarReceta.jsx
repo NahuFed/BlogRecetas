@@ -14,7 +14,9 @@ const EditarReceta = () => {
         setValue
       } = useForm();
       const {id} = useParams();
-    
+      const onSubmit = ()=>{
+   
+      }
 
 
       return (

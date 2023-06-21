@@ -10,6 +10,8 @@ import { Container } from 'react-bootstrap';
 import Login from './components/views/Login';
 import Registro from './components/views/Registro';
 import DetalleReceta from './components/views/DetalleReceta'
+import CrearReceta from './components/views/receta/crearReceta';
+import EditarReceta from './components/views/receta/EditarReceta';
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
           <Route path ="login" element={<Login/>}></Route>        
           <Route path ="registro" element={<Registro/>}></Route>        
           <Route path ="detalle" element={<DetalleReceta/>}></Route>        
+          <Route path ="admin/crear-receta" element={<CrearReceta/>}></Route>        
+          <Route path ="admin/editar-receta" element={<EditarReceta/>}></Route>        
           <Route path ="*" element={<Error404/>}></Route>      
       </Routes>
     </Container>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Swal from 'sweetalert2';
 import { useForm } from "react-hook-form";
+import { Form, Button } from "react-bootstrap";
 
 const CrearReceta = () => {
     const {
@@ -9,7 +10,9 @@ const CrearReceta = () => {
         formState: { errors },
         reset,
       } = useForm();
-
+      const onSubmit = ()=>{
+   
+      }
     return (
         <>
             <h1 className="display-4 mt-5">Nueva receta</h1>
