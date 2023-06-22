@@ -1,6 +1,7 @@
 
 import { Form, Button, Container, Card } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { loginUsuario } from "../helpers/queries";
 
 
 
@@ -11,7 +12,7 @@ const Login = () => {
   const onSubmit = ()=>{
    
   }
-
+loginUsuario();
   return (
     <Container className="mainSection">
       <Card className="my-5">
