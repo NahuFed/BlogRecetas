@@ -64,19 +64,32 @@ const EditarReceta = () => {
     };
 
     useEffect(() => {
-      appendIngredientes([{ ingrediente: '' }, { ingrediente: '' }]);
-      appendPasos([{ paso: '' }, { paso: '' }]);
+
       obtenerUnaReceta(id).then((respuesta)=>{
         setValue('nombreReceta',respuesta.nombreReceta)
         setValue('categoria',respuesta.categoria)
         setValue('complejidad',respuesta.complejidad)
+        setValue('imagen',respuesta.imagen)
+        respuesta.ingredientes.forEach((ingrediente, index) => {
+          Object.keys(ingrediente).forEach((key) => {
+            appendIngredientes([{ ingrediente: '' }]);           
+            setValue(`ingredientes[${index}].${key}`, ingrediente[key]);
+
+          });
+        });
+        respuesta.pasos.forEach((paso, index) => {
+          Object.keys(paso).forEach((key) => {
+            appendPasos([{ paso: '' }]);
+            setValue(`pasos[${index}].${key}`, paso[key]);
+          });
+        });
       })
     }, []);
 
 
     const onSubmit = (recetaVieja)=>{
-      editarReceta(recetaVieja).then((respuesta)=>{
-        if(respuesta && respuesta.status === 201){
+      editarReceta(recetaVieja, id).then((respuesta)=>{
+        if(respuesta && respuesta.status === 200){
             Swal.fire('Receta editada',`La receta ${recetaVieja.nombreReceta} fue editada correctamente`,'success');
 
         }else{
