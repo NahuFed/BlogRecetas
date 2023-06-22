@@ -3,10 +3,19 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import ItemReceta from "./receta/ItemReceta";
+import { obtenerRecetas } from "../helpers/queries";
 
 const Administrador = () => {
-
-
+const [recetas,setRecetas] = useState([]);
+useEffect(()=>{
+  obtenerRecetas().then((respuesta)=>{
+    if(respuesta){
+      setRecetas(respuesta)
+    }else{
+      Swal.fire('Ocurrio un error','Intente realizar esta operacion en unos minutos','error')
+    }
+  })
+},[])
     return (
         <section className="container mainSection">
         <div className="d-flex justify-content-between align-items-center mt-5">
@@ -36,7 +45,7 @@ const Administrador = () => {
             <td>.</td>
             <td>.</td>
             </tr>
-            <ItemReceta></ItemReceta>
+            {recetas.map((receta)=><ItemReceta receta={receta} key ={receta.id}></ItemReceta>)}            
           </tbody>
         </Table>
       </section>

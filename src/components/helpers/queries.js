@@ -1,4 +1,5 @@
 const URL_usuario = import.meta.env.VITE_API_USUARIO
+const URL_recetas = import.meta.env.VITE_API_RECETA
 
 //get sn las petitciones que devuelven una lista de elementos y puede devolver un solo elemento
 //post permite agregr elementos
@@ -28,3 +29,12 @@ export const loginUsuario = async (usuario)=>{
     }
 }
 
+export const obtenerRecetas = async ()=>{
+    try{
+        const respuesta = await fetch(URL_recetas);
+        const listaRecetas = await respuesta.json();
+        return listaRecetas;
+    }catch(error){
+        console.log(error)
+    }
+}
