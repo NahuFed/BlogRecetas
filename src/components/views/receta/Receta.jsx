@@ -8,7 +8,7 @@ const Receta = ({receta}) => {
           <Card.Header>
             {receta.nombreReceta}          
           </Card.Header>
-            <Card.Img variant="top" src={receta.imagen} />
+            <Card.Img variant="top"className='imagen-card' src={receta.imagen} />
           <Card.Body className="d-flex justify-content-center flex-column">
             <Card.Text className='truncarTexto'>Categoria: {receta.categoria} </Card.Text>
             <Card.Text className='truncarTexto'>{receta.complejidad} </Card.Text>
