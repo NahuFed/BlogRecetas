@@ -38,14 +38,25 @@ export const obtenerRecetas = async ()=>{
         console.log(error)
     }
 }
-export const crearRecetas = async (producto)=>{
+export const crearRecetas = async (receta)=>{
     try{
         const respuesta = await fetch(URL_recetas,{
             method: "POST",
             headers: {
                 "Content-Type":"application/json"
             },
-            body : JSON.stringify(producto)
+            body : JSON.stringify(receta)
+        });
+        return respuesta;
+    }catch(error){
+        console.log(error)
+    }
+}
+export const borrarRecetas = async (id)=>{
+    try{
+        const respuesta = await fetch(URL_recetas+'/'+id,{
+            method: "DELETE",
+
         });
         return respuesta;
     }catch(error){

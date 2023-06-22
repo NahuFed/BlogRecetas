@@ -45,7 +45,7 @@ useEffect(()=>{
             <td>.</td>
             <td>.</td>
             </tr>
-            {recetas.map((receta)=><ItemReceta receta={receta} key ={receta.id}></ItemReceta>)}            
+            {recetas.map((receta)=><ItemReceta receta={receta} key ={receta.id} setRecetas={setRecetas}></ItemReceta>)}            
           </tbody>
         </Table>
       </section>

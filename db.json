@@ -19,15 +19,6 @@
       "imagen": "https://www.elmundoeats.com/wp-content/uploads/2019/09/Pasta-Frola-2.jpg"
     },
     {
-      "id": 3,
-      "nombreReceta": "Papas noiset",
-      "complejidad": "facil",
-      "ingredientes": "harina,azucar, manteca, huevo,membrillo, esencia de vainilla",
-      "pasos": "1-mezclar 3 huevos y manteca. 2-...",
-      "categoria": "Tartas dulces",
-      "imagen": "https://www.elmundoeats.com/wp-content/uploads/2019/09/Pasta-Frola-2.jpg"
-    },
-    {
       "nombreReceta": "Budin",
       "complejidad": "Sencilla",
       "imagen": "https://images.thequint.com/thequint%2F2022-11%2Ffba70c49-89d4-45db-80fb-5c51bc08adac%2Fgod_of_war.jpg",
@@ -95,29 +86,6 @@
         }
       ],
       "id": 6
-    },
-    {
-      "nombreReceta": "asdasdad",
-      "complejidad": "Accesible",
-      "imagen": "asd",
-      "categoria": "Sándwiches y wraps",
-      "ingredientes": [
-        {
-          "ingrediente": "asdasd22"
-        },
-        {
-          "ingrediente": "asdasd23"
-        }
-      ],
-      "pasos": [
-        {
-          "paso": "asdasd"
-        },
-        {
-          "paso": "asdasd31"
-        }
-      ],
-      "id": 7
     }
   ],
   "usuarios": [
