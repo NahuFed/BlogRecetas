@@ -21,7 +21,7 @@ function App() {
     <BarraNavegacion></BarraNavegacion>
     <Container className='main my-5'>
         <Routes>
-          <Route path ="/" element={<Home/>}></Route>      
+          <Route exact path ="/" element={<Home/>}></Route>      
           <Route path ="admin" element={<Administrador/>}></Route>        
           <Route path ="login" element={<Login/>}></Route>        
           <Route path ="registro" element={<Registro/>}></Route>        

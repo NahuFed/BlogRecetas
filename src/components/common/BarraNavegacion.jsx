@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { NavLink } from 'react-router-dom'; 
+import { Link, NavLink } from 'react-router-dom'; 
 import logo from '../../assets/logo.png'
 
 function BarraNavegacion() {
@@ -16,7 +16,7 @@ function BarraNavegacion() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="/"> <Image src={logo} alt="logo" className='logo'/></Navbar.Brand>
+        <Navbar.Brand as={Link} to={"/"}> <Image src={logo} alt="logo" className='logo'/></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
