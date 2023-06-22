@@ -38,3 +38,17 @@ export const obtenerRecetas = async ()=>{
         console.log(error)
     }
 }
+export const crearRecetas = async (producto)=>{
+    try{
+        const respuesta = await fetch(URL_recetas,{
+            method: "POST",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body : JSON.stringify(producto)
+        });
+        return respuesta;
+    }catch(error){
+        console.log(error)
+    }
+}

@@ -3,6 +3,7 @@ import Swal from 'sweetalert2';
 import { useForm , useFieldArray} from "react-hook-form";
 import { Form, Button } from "react-bootstrap";
 import { useState, useEffect } from 'react';
+import { crearRecetas } from '../../helpers/queries';
 
 const CrearReceta = () => {
     const {
@@ -63,8 +64,16 @@ const CrearReceta = () => {
       }, []);
 
 
-      const onSubmit = ()=>{
-        console.log("funciono :p")
+      const onSubmit = (recetaNueva)=>{
+        console.log(recetaNueva)
+       crearRecetas(recetaNueva).then((respuesta)=>{
+        if(respuesta && respuesta.status === 201){
+            Swal.fire('Receta creada',`La receta ${recetaNueva.nombreReceta} fue creada correctamente`,'success');
+
+        }else{
+          Swal.fire('A ocurrido un error',`La receta ${recetaNueva.nombreReceta} no pudo ser creada, intente mas tarde`,'error');
+        }
+       })
       }
     return (
         <>
