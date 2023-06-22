@@ -1,91 +1,119 @@
 {
   "recetas": [
     {
-      "id": 1,
-      "nombreReceta": "Pastafrola",
-      "complejidad": "facil",
-      "ingredientes": "harina,azucar, manteca, huevo,membrillo, esencia de vainilla",
-      "pasos": "1-mezclar 3 huevos y manteca. 2-...",
-      "categoria": "Tartas dulces",
-      "imagen": "https://www.elmundoeats.com/wp-content/uploads/2019/09/Pasta-Frola-2.jpg"
-    },
-    {
-      "id": 2,
-      "nombreReceta": "Flan",
-      "complejidad": "facil",
-      "ingredientes": "harina,azucar, manteca, huevo,membrillo, esencia de vainilla",
-      "pasos": "1-mezclar 3 huevos y manteca. 2-...",
-      "categoria": "Tartas dulces",
-      "imagen": "https://www.elmundoeats.com/wp-content/uploads/2019/09/Pasta-Frola-2.jpg"
-    },
-    {
-      "nombreReceta": "Budin",
-      "complejidad": "Sencilla",
-      "imagen": "https://images.thequint.com/thequint%2F2022-11%2Ffba70c49-89d4-45db-80fb-5c51bc08adac%2Fgod_of_war.jpg",
-      "categoria": "Pasteles caseros",
+      "nombreReceta": "Pasta Frola",
+      "complejidad": "Accesible",
+      "imagen": "https://www.elmundoeats.com/wp-content/uploads/2019/09/Pasta-Frola-2.jpg",
+      "categoria": "Tartas de frutas",
       "ingredientes": [
         {
-          "ingrediente": "pan"
+          "ingrediente": "Huevo 1"
         },
         {
-          "ingrediente": "leche"
+          "ingrediente": "Yema 1"
+        },
+        {
+          "ingrediente": "Harina leudante 400 gr"
+        },
+        {
+          "ingrediente": "Azúcar 200 gr"
+        },
+        {
+          "ingrediente": "Manteca 200 gr"
+        },
+        {
+          "ingrediente": "Esencia de vainilla 1cda"
+        },
+        {
+          "ingrediente": "Sal 1 cdta"
         }
       ],
       "pasos": [
         {
-          "paso": "mojar el  pan con leche"
+          "paso": "Lo primero que vamos a hacer es poner en un bol la manteca cortada en cubitos. Que no esté super fría ni muy derretida. La vamos a batir con el azúcar hasta que se forme una crema clarita y bien lisa."
         },
         {
-          "paso": "calentar"
+          "paso": "Ahora vamos a sumar el huevo y la yema, la esencia de vainilla y la ralladura de limón, y volvemos a batir. No se asusten si al principio parece que la mezcla se “corta”, es hasta que las yemas se integren bien con la manteca."
+        },
+        {
+          "paso": "Cuando la preparación esté unida y lisa de nuevo, vamos a dejar de lado la batidora y agarrar una espátula. Agregamos el harina leudante y la vamos incorporando con la espátula hasta que se pueda mezclar con las manos. La idea es integrar la masa, no amasarla como un pan! Una vez que esté bien unida, la ponemos en un film y la llevamos a la heladera 30 minutos."
+        },
+        {
+          "paso": "Mientras vamos con el relleno de pasta frola: cortamos el dulce (o los dulces en mi caso) en cubitos, lo ponemos en un bol, agregamos una cucharada de agua aproximadamente y lo llevamos al microondas un minuto a potencia media para derretirlo. Cuando sale, lo aplastamos con un tenedor o un pisapapas. Tengamos cuidado en esta parte, porque el dulce de membrillo se calienta y quema mucho!"
+        },
+        {
+          "paso": "Sacamos la masa de la heladera y vamos a armar la base en un molde con la técnica de los capos n°1, aplastándola con el puño y un film. (en el video se ve clarísimo). Acomodamos los bordes y rellenamos la pasta frola con los dulces de membrillo y batata derretidos."
+        },
+        {
+          "paso": "Ahora viene la magia de la técnica de los capos n°3: la decoración. Ponemos la masa entre dos films, la estiramos y la mandamos al congelador. Sacamos el film de arriba y cortamos con una cuchilla las tiras, prestado atención de cortar el film de abajo también. Después levantamos desde el film la tira y la ponemos directamente sobre el relleno, cuando esté bien acomodada, sacamos el film y listo!"
+        },
+        {
+          "paso": "La llevamos al horno a 200° por unos 40 minutos o hasta que esté doradita."
+        }
+      ],
+      "id": 3
+    },
+    {
+      "nombreReceta": "Noodles de arroz con ternera ",
+      "complejidad": "Moderada",
+      "imagen": "https://www.paulinacocina.net/wp-content/uploads/2023/03/noodles-con-ternera-800x450.jpg",
+      "categoria": "Platos de pasta rápidos",
+      "ingredientes": [
+        {
+          "ingrediente": "Noodles de arroz."
+        },
+        {
+          "ingrediente": "100 gramos de ternera, cortada en tiras finas."
+        },
+        {
+          "ingrediente": "1 diente de ajo, picado"
+        },
+        {
+          "ingrediente": "½ cebolla, cortada en rodajas finas."
+        },
+        {
+          "ingrediente": "½  taza de caldo de ternera."
+        },
+        {
+          "ingrediente": "¼ taza de salsa de soja."
+        },
+        {
+          "ingrediente": "¼  taza de vino de arroz (opcional)."
+        },
+        {
+          "ingrediente": "Azúcar morena."
+        },
+        {
+          "ingrediente": "1 cucharada de aceite de sésamo."
+        },
+        {
+          "ingrediente": "Verduras mixtas cortadas en tiras (pueden ser zucchini, brócoli, zanahoria, pimiento, etc.)."
+        },
+        {
+          "ingrediente": "Sésamo."
+        },
+        {
+          "ingrediente": "Cilantro fresco, para servir."
+        }
+      ],
+      "pasos": [
+        {
+          "paso": "Cocinar los noodles de arroz según las instrucciones del paquete. Luego escurrirlos y reservar."
+        },
+        {
+          "paso": "Calentar aceite en una sartén grande o un wok a fuego medio-alto. Comenzar agregando la ternera en tiras y las verduras. Cocinar por 10 minutos hasta dorar y luego agregar el ajo y la cebolla, cocinar por un minuto más."
+        },
+        {
+          "paso": "Pasado el tiempo agregar el caldo de ternera, junto con la salsa de soja, el vino de arroz (opcional) y el azúcar morena a la sartén. Mezclar bien y cocinar a fuego medio durante 3-4 minutos, hasta reducir el líquido ligeramente."
+        },
+        {
+          "paso": "Por último agregar los noodles cocidos a la sartén y revolver para incorporar todos los sabores de la salsa y las verduras. Cocinar por un minuto más."
+        },
+        {
+          "paso": "Espolvorear por arriba con sésamo y cilantro fresco. Listo!"
         }
       ],
       "id": 4
-    },
-    {
-      "nombreReceta": "asdasd",
-      "complejidad": "Accesible",
-      "imagen": "asd",
-      "categoria": "Platos de pasta rápidos",
-      "ingredientes": [
-        {
-          "ingrediente": "asdasd"
-        },
-        {
-          "ingrediente": "asdasd"
-        }
-      ],
-      "pasos": [
-        {
-          "paso": "asdasd"
-        },
-        {
-          "paso": "asdasd"
-        }
-      ],
-      "id": 5
-    },
-    {
-      "nombreReceta": "asdasd",
-      "complejidad": "Accesible",
-      "imagen": "asd",
-      "categoria": "Platos de pasta rápidos",
-      "ingredientes": [
-        {
-          "ingrediente": "asdasd"
-        },
-        {
-          "ingrediente": "asdasd"
-        }
-      ],
-      "pasos": [
-        {
-          "paso": "asdasd"
-        },
-        {
-          "paso": "asdasd"
-        }
-      ],
-      "id": 6
     }
   ],
   "usuarios": [

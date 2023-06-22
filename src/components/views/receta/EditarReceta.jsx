@@ -3,6 +3,8 @@ import { Form, Button } from "react-bootstrap";
 import { useFieldArray, useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
+import { editarReceta, obtenerUnaReceta } from '../../helpers/queries';
+import Swal from 'sweetalert2';
 
 
 const EditarReceta = () => {
@@ -14,6 +16,9 @@ const EditarReceta = () => {
       control,
       setValue,
     } = useForm();
+    const {id} = useParams();
+
+
 
     const { fields: ingredientesFields, append: appendIngredientes, remove: removeIngredientes } = useFieldArray({
       control,
@@ -61,11 +66,23 @@ const EditarReceta = () => {
     useEffect(() => {
       appendIngredientes([{ ingrediente: '' }, { ingrediente: '' }]);
       appendPasos([{ paso: '' }, { paso: '' }]);
+      obtenerUnaReceta(id).then((respuesta)=>{
+        setValue('nombreReceta',respuesta.nombreReceta)
+        setValue('categoria',respuesta.categoria)
+        setValue('complejidad',respuesta.complejidad)
+      })
     }, []);
 
 
-    const onSubmit = ()=>{
-      console.log("funciono :p")
+    const onSubmit = (recetaVieja)=>{
+      editarReceta(recetaVieja).then((respuesta)=>{
+        if(respuesta && respuesta.status === 201){
+            Swal.fire('Receta editada',`La receta ${recetaVieja.nombreReceta} fue editada correctamente`,'success');
+
+        }else{
+          Swal.fire('A ocurrido un error',`La receta ${recetaVieja.nombreReceta} no pudo ser editada, intente mas tarde`,'error');
+        }
+       })
     }
   return (
       <>

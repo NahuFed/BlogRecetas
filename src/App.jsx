@@ -31,7 +31,7 @@ const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
           }></Route>        
           <Route path ="login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}></Route>        
           <Route path ="registro" element={<Registro/>}></Route>        
-          <Route path ="detalle" element={<DetalleReceta/>}></Route>                       
+          <Route path ="detalle/:id" element={<DetalleReceta/>}></Route>                       
           <Route path ="*" element={<Error404/>}></Route>      
       </Routes>
     </Container>

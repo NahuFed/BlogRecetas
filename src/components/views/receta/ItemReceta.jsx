@@ -49,7 +49,7 @@ const ItemReceta = ({ receta, setRecetas }) => {
       <td>{receta.imagen}</td>
       <td>{receta.categoria}</td>
       <td>
-        <Link to={"editar-receta"} className="btn btn-warning">
+        <Link to={"editar-receta/"+receta.id} className="btn btn-warning">
           Editar
         </Link>{" "}
         <Button variant="danger" onClick={eliminarReceta}>
