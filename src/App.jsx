@@ -12,18 +12,21 @@ import Registro from './components/views/Registro';
 import DetalleReceta from './components/views/DetalleReceta'
 import CrearReceta from './components/views/receta/crearReceta';
 import EditarReceta from './components/views/receta/EditarReceta';
+import { useState } from 'react';
 
 
 function App() {
+  const usuario =JSON.parse(sessionStorage.getItem('usuario')) || {}
+const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
 
   return (
     <BrowserRouter>
-    <BarraNavegacion></BarraNavegacion>
+    <BarraNavegacion usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></BarraNavegacion>
     <Container className='main my-5'>
         <Routes>
           <Route exact path ="/" element={<Home/>}></Route>      
           <Route path ="admin" element={<Administrador/>}></Route>        
-          <Route path ="login" element={<Login/>}></Route>        
+          <Route path ="login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}></Route>        
           <Route path ="registro" element={<Registro/>}></Route>        
           <Route path ="detalle" element={<DetalleReceta/>}></Route>        
           <Route path ="admin/crear-receta" element={<CrearReceta/>}></Route>        

@@ -4,11 +4,16 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link, NavLink } from 'react-router-dom'; 
+import { Link, NavLink, useNavigate } from 'react-router-dom'; 
 import logo from '../../assets/logo.png'
 
-function BarraNavegacion() {
-
+const BarraNavegacion= ({usuarioLogueado, setUsuarioLogueado}) => {
+  const navegacion = useNavigate();
+  const logout= () =>{
+    sessionStorage.removeItem('usuario');
+    setUsuarioLogueado({});
+    navegacion('/')
+  }
   let activeStyle ={
     textDecoration: 'undirline',
     fontWeight: 'bold'
@@ -24,10 +29,15 @@ function BarraNavegacion() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           > 
-          <NavLink className='nav-link' to="/" style={({ isActive }) => (isActive ? activeStyle : undefined)} >Inicio</NavLink>
-            <NavLink className='nav-link' to="/admin" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Admin</NavLink>
-            <NavLink className='nav-link' to="/login" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Login</NavLink>
+          <NavLink className='nav-link' to="/" style={({ isActive }) => (isActive ? activeStyle : undefined)} >Inicio</NavLink>            
             <NavLink className='nav-link' to="/registro" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Registrarse</NavLink>
+            {
+              usuarioLogueado.nombreUsuario?
+              <>
+              <NavLink className='nav-link' to="/admin" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Admin</NavLink>
+              <Button variant = 'dark' onClick={logout}>Logout</Button>
+              </>:<NavLink className='nav-link' to="/login" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Login</NavLink>
+            }
             </Nav>
 
           <Form className="d-flex">
