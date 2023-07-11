@@ -27,7 +27,6 @@ Blog de recetas de cocina
 - Puedes acceder con el usuario de administrador para crear, editar y borrar las recetas
 
 ## Herramientas utilizadas 🛠
-- Json Server
 - Javascript
 - React
 - React-Bootstrap
