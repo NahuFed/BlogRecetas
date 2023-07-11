@@ -6,8 +6,11 @@ Blog de recetas de cocina
 1. Clona este repositorio frontend: `git clone https://github.com/NahuFed/BlogRecetas`
 2. Navega al directorio del proyecto: `cd BlogRecetas`
 3. Instala las dependencias: `npm install`
-4. Clona el repositorio del backend en otra carpeta: `git clone https://github.com/NahuFed/backend-ejercicio-14`
-5. Instala las dependencias del backend: `npm install express --save npm i babel-cli babel-preset-env  express-validator  mongoose  cors morgan dotenv`
+4. Crear un archivo llamado .env en la raiz del repositorio frontend y escribir en el: `VITE_API_USUARIO=http://localhost:4001/apirecetas/auth/` y
+`VITE_API_RECETA=http://localhost:4001/apirecetas/recetas`
+5. Clona el repositorio del backend en otra carpeta: `git clone https://github.com/NahuFed/backend-ejercicio-14`
+6. Instala las dependencias del backend: `npm install express --save npm i babel-cli babel-preset-env  express-validator  mongoose  cors morgan dotenv`
+ 
 ## Uso
 
 
