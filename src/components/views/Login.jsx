@@ -13,7 +13,7 @@ const Login = ({setUsuarioLogueado}) => {
   const onSubmit = (usuario)=>{
    loginUsuario(usuario).then((respuesta)=>{
    console.log(respuesta)
-   if(respuesta){
+   if(respuesta && respuesta.nombreUsuario){
     sessionStorage.setItem('usuario',JSON.stringify(respuesta))
     setUsuarioLogueado(respuesta);
     navegacion('/admin')
