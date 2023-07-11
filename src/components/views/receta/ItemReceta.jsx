@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 const ItemReceta = ({ receta, setRecetas }) => {
   const eliminarReceta = () => {
-    borrarRecetas(receta.id).then((respuesta) => {
+    borrarRecetas(receta._id).then((respuesta) => {
       Swal.fire({
         title: "Esta seguro?",
         text: "No podrás ser capaz de revertir esto!",
@@ -43,13 +43,13 @@ const ItemReceta = ({ receta, setRecetas }) => {
 
   return (
     <tr>
-      <td>{receta.id}</td>
+      <td>{receta._id}</td>
       <td>{receta.nombreReceta}</td>
       <td>{receta.complejidad}</td>
       <td>{receta.imagen}</td>
       <td>{receta.categoria}</td>
       <td>
-        <Link to={"editar-receta/"+receta.id} className="btn btn-warning">
+        <Link to={"editar-receta/"+receta._id} className="btn btn-warning">
           Editar
         </Link>{" "}
         <Button variant="danger" onClick={eliminarReceta}>

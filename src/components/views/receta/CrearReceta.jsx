@@ -173,7 +173,7 @@ const CrearReceta = () => {
         </p>
       )}
           {ingredientesFields.map((field, index) => (
-        <Form.Group className='mb-3' key={field.id}>
+        <Form.Group className='mb-3' key={field._id}>
                     <div style={{ display: 'flex' }}>
             <div style={{ marginRight: '10px' }}>{index + 1}.</div>
           <Form.Control
@@ -203,7 +203,7 @@ const CrearReceta = () => {
         </p>
       )}
           {pasosFields.map((field, index) => (
-        <Form.Group className='mb-3' key={field.id}>
+        <Form.Group className='mb-3' key={field._id}>
                     <div style={{ display: 'flex' }}>
             <div style={{ marginRight: '10px' }}>{index + 1}.</div>
           <Form.Control

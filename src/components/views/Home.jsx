@@ -22,7 +22,7 @@ function Home() {
     <h1 className='text-center my-5'>Blog de Recetas</h1>
     <Row className='m-1'>
         {
-          recetas.map((receta)=><Receta receta={receta} key={receta.id}></Receta>)
+          recetas.map((receta)=><Receta receta={receta} key={receta._id}></Receta>)
         }
         </Row>    
 

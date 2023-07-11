@@ -14,7 +14,7 @@ const Receta = ({receta}) => {
             <Card.Text className='truncarTexto'>{receta.complejidad} </Card.Text>
           </Card.Body>
           <Card.Footer className="d-flex justify-content-center">
-            <Link className='btn btn-dark' to={"/detalle/"+receta.id} >
+            <Link className='btn btn-dark' to={"/detalle/"+receta._id} >
               Ver receta completa
             </Link>
           </Card.Footer>
